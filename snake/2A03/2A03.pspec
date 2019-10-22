@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<processor_spec>
+  <programcounter register="PC"/>
+  
+  <!--<volatile outputop="write" inputop="read">
+    <range space="RAM" first="0x0" last="0x20"/>
+  </volatile>-->
+  <volatile outputop="write" inputop="read">
+    <range space="RAM" first="0x200" last="0x7ff"/>
+
+    <!--<range space="RAM" first="0xA00" last="0xfff"/>-->
+    <!--<range space="RAM" first="0x1200" last="0x17ff"/>-->
+    <!--<range space="RAM" first="0x1A00" last="0x1fff"/>-->
+  </volatile>
+
+  
+  <default_symbols>
+    <!--<symbol name="PORTA" address="0"/>
+    <symbol name="PORTB" address="1"/>
+    <symbol name="PORTC" address="2"/>
+    <symbol name="PORTD" address="3"/>
+    <symbol name="DDRA" address="4"/>
+    <symbol name="DDRB" address="5"/>
+    <symbol name="DDRC" address="6"/>
+    <symbol name="DDRD" address="7"/>
+    <symbol name="SPCR" address="A"/>
+    <symbol name="SPSR" address="B"/>
+    <symbol name="SPDR" address="C"/>
+    <symbol name="BAUD" address="D"/>
+    <symbol name="SCCR1" address="E"/>
+    <symbol name="SCCR2" address="F"/>
+    <symbol name="SCSR" address="10"/>
+    <symbol name="SCDAT" address="11"/>
+    <symbol name="TCR" address="12"/>
+    <symbol name="TSR" address="13"/>
+    <symbol name="ICHR" address="14"/>
+    <symbol name="ICLR" address="15"/>
+    <symbol name="OCHR" address="16"/>
+    <symbol name="OCLR" address="17"/>
+    <symbol name="CHR" address="18"/>
+    <symbol name="CLR" address="19"/>
+    <symbol name="ACHR" address="1A"/>
+    <symbol name="ACLR" address="1B"/>-->
+    <symbol name="NMI" address="FFFA" entry="true" type="code_ptr"/>
+    <symbol name="RES" address="FFFC" entry="true" type="code_ptr"/>
+    <symbol name="IRQ" address="FFFE" entry="true" type="code_ptr"/>    
+  </default_symbols>
+  
+  <default_memory_blocks>
+    <memory_block name="ZERO_PAGE" start_address="0" length="0x100" initialized="false"/>
+    <memory_block name="STACK" start_address="0x0100" length="0x100" initialized="false"/>
+    <memory_block name="RAM" start_address="0x200" length="0x600" initialized="false"/>
+
+    <!--
+    <memory_block name="ZERO_PAGE_MIRROR1" start_address="0x800" length="0x100" initialized="false"/>
+    <memory_block name="STACK_MIRROR1" start_address="0x900" length="0x100" initialized="false"/>
+    <memory_block name="RAM_MIRROR1" start_address="0xA00" length="0x600" initialized="false"/>
+
+    <memory_block name="ZERO_PAGE_MIRROR2" start_address="0x1000" length="0x100" initialized="false"/>
+    <memory_block name="STACK_MIRROR2" start_address="0x1100" length="0x100" initialized="false"/>
+    <memory_block name="RAM_MIRROR2" start_address="0x1200" length="0x600" initialized="false"/>
+
+
+    <memory_block name="ZERO_PAGE_MIRROR3" start_address="0x1800" length="0x100" initialized="false"/>
+    <memory_block name="STACK_MIRROR3" start_address="0x1900" length="0x100" initialized="false"/>
+    <memory_block name="RAM_MIRROR3" start_address="0x1A00" length="0x600" initialized="false"/>
+    -->
+
+    <memory_block name="PPU_IO" start_address="0x2000" length="0x2000" initialized="true"/>
+    <memory_block name="APU_CTRL_IO" start_address="0x4000" length="0x20" initialized="false"/>
+
+    <memory_block name="EXPANSION_ROM" start_address="0x4020" length="0x1FE0" initialized="false"/>
+    <memory_block name="SRAM" start_address="0x6000" length="0x2000" initialized="false"/>
+
+    <!--<memory_block name="PRG_ROM" start_address="0x8000" length="0x8000" initialized="false"/>-->
+    <!--<memory_block name="IO" start_address="0" length="0x20" initialized="false"/>-->
+  </default_memory_blocks>
+</processor_spec>
